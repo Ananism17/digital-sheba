@@ -1,0 +1,136 @@
+/* ===================================================================== */
+/* ===================================================================== */
+/* ====================== BOOTSTRAP CUSTOMIZATION ====================== */
+/* ===================================================================== */
+/* ===================================================================== */
+
+
+/* TABS */
+
+.custom-tabs .nav-link {
+  color: darkcyan;
+}
+
+.custom-tabs .nav-link:hover {
+    background-color: rgb(9, 179, 179);
+    color: white;
+  }
+
+.custom-tabs .nav-link.active {
+  background-color: darkcyan;
+  color: white;
+}
+
+
+/* TILES */
+
+.custom-tiles {
+  padding: 20px;
+  border: 2px solid darkcyan;
+  background: white;
+  border-radius: 5px;
+  color: darkcyan;
+  cursor: pointer;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  min-height: 165px;
+}
+
+.custom-tiles:hover {
+  background: darkcyan;
+  color: white;
+  transform: scale(1.1);
+}
+
+
+/* INPUT FIELD */
+
+.custom-input {
+  border: none;
+  border-bottom: 2px solid darkcyan;
+  border-radius: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.custom-input:focus {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-color: cyan;
+}
+
+
+/* BUTTONS */
+
+.custom-button-contained {
+  background-color: rgb(9, 179, 179);
+  border: 2px solid rgb(9, 179, 179);
+  transition: all 0.3s ease;
+}
+
+.custom-button-contained:active {
+  background-color: darkcyan !important;
+  border: 2px solid darkcyan !important;
+}
+
+.custom-button-contained:hover {
+  background-color: darkcyan;
+  border: 2px solid darkcyan;
+}
+
+.custom-button-outlined {
+  background-color: white;
+  color: darkcyan;
+  border: 2px solid darkcyan;
+  transition: all 0.3s ease;
+}
+
+.custom-button-outlined:hover {
+  background-color: darkcyan;
+  border: 2px solid darkcyan;
+}
+
+
+/* TABLE */
+
+.custom-table th {
+  background-color: darkcyan;
+  color: white;
+}
+
+/* DATEPICKER */
+
+.custom-datepicker-wrapper {
+  width: 100%;
+}
+
+.custom-datepicker {
+  height: 48px;
+  border: none;
+  border-bottom: 2px solid darkcyan;
+  border-radius: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: 100%;
+  padding-left: 15px;
+}
+
+.custom-datepicker:focus {
+  outline: none;
+  border-color: cyan;
+}
+
+.custom-calendar {
+  background-color: #cce6df !important;
+  padding: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.react-datepicker__header {
+  background-color: #cce6df !important;
+  margin-bottom: 20px;
+}
+
+.react-datepicker__day--selected {
+  background-color: darkcyan !important; 
+  color: #fff !important; 
+}
