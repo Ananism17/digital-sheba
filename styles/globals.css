@@ -134,3 +134,52 @@
   background-color: darkcyan !important; 
   color: #fff !important; 
 }
+
+
+.custom-anchor {
+  color: darkcyan;
+  text-decoration: none;
+}
+
+
+
+/* ===================================================================== */
+/* ===================================================================== */
+/* ========================== LOGIN & REGISTER ========================= */
+/* ===================================================================== */
+/* ===================================================================== */
+
+.login-container {
+  background: url('/images/background.png') center/cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.login-card {
+  background: rgba(255, 255, 255, 0.2); 
+  backdrop-filter: blur(10px); 
+  border-radius: 10px; 
+  padding: 20px; 
+  flex-direction: column;
+}
+
+.password-input {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.password-input input {
+  flex-grow: 1;
+}
+
+.password-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
