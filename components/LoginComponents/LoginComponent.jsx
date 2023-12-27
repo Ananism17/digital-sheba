@@ -4,6 +4,10 @@ import Link from "next/link";
 //react-bootstrap
 import { Container, Row, Col, Button, Card, Form } from "react-bootstrap";
 
+//redux imports
+import { useDispatch } from "react-redux";
+import { auth } from "../../store/actions";
+
 //icons
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
@@ -12,12 +16,21 @@ const LoginComponents = () => {
   const [mobile, setMobile] = useState(null);
   const [password, setPassword] = useState(null);
 
+  // REDUX
+  const dispatch = useDispatch(auth(mobile, password));
+
   //boolean
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   //password visibility
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
+  };
+
+  //login function
+  const login = (e) => {
+    e.preventDefault();
+    dispatch(auth(mobile, password));
   };
 
   return (
@@ -81,7 +94,7 @@ const LoginComponents = () => {
                       variant="primary"
                       type="submit"
                       className="custom-button-contained mt-4"
-                      // onClick={login}
+                      onClick={login}
                     >
                       লগইন করুন
                     </Button>
@@ -93,7 +106,9 @@ const LoginComponents = () => {
                         style={{ color: "darkcyan", cursor: "pointer" }}
                         // onClick={signUp}
                       >
-                        <Link href="/register" className="custom-anchor">রেজিস্টার করুন!</Link>
+                        <Link href="/register" className="custom-anchor">
+                          রেজিস্টার করুন!
+                        </Link>
                       </span>
                     </p>
                   </div>

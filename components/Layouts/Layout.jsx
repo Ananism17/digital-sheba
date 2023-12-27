@@ -11,12 +11,17 @@ import TopbarComponent from "../GlobalComponents/TopbarComponent";
 import Login from "@/pages/login";
 import Register from "@/pages/register";
 
-const Layout = ({ children }) => {
+//redux imports
+import { connect } from "react-redux";
+
+//react-toast
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+const Layout = ({ children, isLoggedIn }) => {
   //sidebar
   const [collapsed, setCollapsed] = useState(false);
   const [toggled, setToggled] = useState(false);
-
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   //sidebar-functions
   const handleCollapsedChange = () => {
@@ -39,6 +44,8 @@ const Layout = ({ children }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <ToastContainer />
 
       {isLoggedIn ? (
         <>
@@ -64,4 +71,10 @@ const Layout = ({ children }) => {
   );
 };
 
-export default Layout;
+const mapStateToProps = (state) => {
+  return {
+    isLoggedIn: state.auth.token,
+  };
+};
+
+export default connect(mapStateToProps)(Layout);
