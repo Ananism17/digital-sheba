@@ -98,7 +98,7 @@ const ChnagePasswordComponent = ({ token }) => {
           <Row style={{ width: "100%" }} className="px-3">
             <Col md lg={6} className="mt-4">
               <Form.Group className="mt-4">
-                <Form.Label>পাসওয়ার্ড</Form.Label>
+                <Form.Label>নতুন পাসওয়ার্ড</Form.Label>
                 <div className="password-input">
                   <Form.Control
                     type={passwordVisible ? "text" : "password"}
