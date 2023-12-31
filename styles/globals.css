@@ -4,6 +4,22 @@
 /* ===================================================================== */
 /* ===================================================================== */
 
+/* TYPOGRAPHY */
+
+.custom-header {
+  color: darkcyan;
+  font-size: 32px;
+}
+.custom-text {
+  color: #19ab84;
+  font-size: 20px;
+}
+.custom-text-bold {
+  color: #19ab84;
+  font-weight: bold;
+  font-size: 20px;
+}
+
 /* TABS */
 
 .custom-tabs .nav-link {
@@ -145,9 +161,22 @@ div.dropdown-menu.show {
 a.dropdown-item {
   color: #fff; 
 }
-a.dropdown-item:hover {
-  color: darkcyan; 
+a.dropdown-item:active {
+  background-color: #cce6df;
+  color: darkcyan;
 }
+a.dropdown-item:hover {
+  color: darkcyan !important;
+}
+
+/* LOADER */
+
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 /* ===================================================================== */
 /* ===================================================================== */

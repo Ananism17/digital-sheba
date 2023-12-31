@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Link from "next/link";
 import Router from "next/router";
 
 //react-bootstrap
@@ -25,13 +26,20 @@ const TopbarComponent = ({ handleToggleSidebar, token, name }) => {
   //redux
   const dispatch = useDispatch();
 
+  //profile
+  const profileRoute = () => {
+    Router.push({
+      pathname: "/profile",
+    });
+  }
+
+  //logout
   const submitHandler = () => {
     const apiUrl = BASE_URL + "nagorik/v1/user/sign-out";
     const config = {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
-        // "Content-Type": "multipart/form-data",
       },
     };
     axios
@@ -64,11 +72,14 @@ const TopbarComponent = ({ handleToggleSidebar, token, name }) => {
         />
       </Nav>
       <Nav>
-        <NavDropdown title={name} style={{ marginRight: "80px", color: "darkcyan" }}>
-          <NavDropdown.Item href="#">
-            <CgProfile className="mb-1" /> প্রোফাইল
-          </NavDropdown.Item>
-          <NavDropdown.Item href="#">
+        <NavDropdown
+          title={name}
+          style={{ marginRight: "80px", color: "darkcyan" }}
+        >
+            <NavDropdown.Item onClick={profileRoute}>
+              <CgProfile className="mb-1" /> প্রোফাইল
+            </NavDropdown.Item>
+          <NavDropdown.Item>
             <FaKey className="mb-1" /> পাসওয়ার্ড পরিবর্তন
           </NavDropdown.Item>
           <NavDropdown.Divider />

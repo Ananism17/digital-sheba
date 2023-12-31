@@ -1,16 +1,17 @@
+import React, { useState } from "react";
+
+//components
 import ApplicationTilesComponent from "@/components/HomeComponents/ApplicationTilesComponent";
 import ContactComponent from "@/components/HomeComponents/ContactComponent";
 import PendingApplicationListComponent from "@/components/HomeComponents/PendingApplicationListComponent";
 import ProfileSettingsComponent from "@/components/HomeComponents/ProfileSettingsComponent";
-import { useSSRSafeId } from "@react-aria/ssr";
-import React, { useState } from "react";
 
 //react-bootstrap
 import { Tabs, Tab, Row, Col, Form } from "react-bootstrap";
 
 const Home = () => {
-  const [activeKey, setActiveKey] = useState("tab2");
-  const [option, setOption] = useState(2);
+  const [activeKey, setActiveKey] = useState("tab1");
+  const [option, setOption] = useState(1);
 
   const handleTabSelect = (selectedKey) => {
     setActiveKey(selectedKey);
@@ -26,21 +27,18 @@ const Home = () => {
             id="myTabs"
             className="custom-tabs"
           >
-            <Tab eventKey="tab1" title="প্রোফাইল সেটিংস">
-              <ProfileSettingsComponent />
-            </Tab>
-            <Tab eventKey="tab2" title="সনদ আবেদন">
+            <Tab eventKey="tab1" title="সনদ আবেদন">
               <ApplicationTilesComponent />
             </Tab>
-            <Tab eventKey="tab3" title="যোগাযোগ করুন">
+            <Tab eventKey="tab2" title="যোগাযোগ করুন">
               <ContactComponent />
             </Tab>
-            <Tab eventKey="tab4" title="পেন্ডিং আবেদন">
+            <Tab eventKey="tab3" title="পেন্ডিং আবেদন">
               <PendingApplicationListComponent />
             </Tab>
-            <Tab eventKey="tab5" title="সনদ প্রিন্ট"></Tab>
-            <Tab eventKey="tab6" title="হোল্ডিং ট্যাক্স"></Tab>
-            <Tab eventKey="tab7" title="পারিবারিক সদস্য"></Tab>
+            <Tab eventKey="tab4" title="সনদ প্রিন্ট"></Tab>
+            <Tab eventKey="tab5" title="হোল্ডিং ট্যাক্স"></Tab>
+            <Tab eventKey="tab6" title="পারিবারিক সদস্য"></Tab>
           </Tabs>
         </Col>
       </Row>
@@ -52,19 +50,17 @@ const Home = () => {
               setOption(e.target.value);
             }}
           >
-            <option value="1">প্রোফাইল সেটিংস</option>
-            <option value="2">সনদ আবেদন</option>
-            <option value="3">যোগাযোগ করুন</option>
-            <option value="4">পেন্ডিং আবেদন</option>
-            <option value="5">সনদ প্রিন্ট</option>
-            <option value="6">হোল্ডিং ট্যাক্স</option>
-            <option value="7">পারিবারিক সদস্য</option>
+            <option value="1">সনদ আবেদন</option>
+            <option value="2">যোগাযোগ করুন</option>
+            <option value="3">পেন্ডিং আবেদন</option>
+            <option value="4">সনদ প্রিন্ট</option>
+            <option value="5">হোল্ডিং ট্যাক্স</option>
+            <option value="6">পারিবারিক সদস্য</option>
           </Form.Select>
         </Col>
-        {option == 1 && <ProfileSettingsComponent />}
-        {option == 2 && <ApplicationTilesComponent />}
-        {option == 3 && <ContactComponent />}
-        {option == 4 && <PendingApplicationListComponent />}
+        {option == 1 && <ApplicationTilesComponent />}
+        {option == 2 && <ContactComponent />}
+        {option == 3 && <PendingApplicationListComponent />}
       </Row>
     </>
   );
