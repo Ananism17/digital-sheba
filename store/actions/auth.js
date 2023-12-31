@@ -48,6 +48,10 @@ export const auth = (mobile, password) => {
         }
       })
       .catch((err) => {
+        toast.error(err.response.data.message, {
+          position: "top-right",
+          theme: "colored",
+        });
         console.log(err);
       });
   };

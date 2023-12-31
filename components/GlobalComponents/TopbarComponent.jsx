@@ -33,6 +33,13 @@ const TopbarComponent = ({ handleToggleSidebar, token, name }) => {
     });
   }
 
+  //change-password
+  const changePasswordRoute = () => {
+    Router.push({
+      pathname: "/profile/change-password",
+    });
+  }
+
   //logout
   const submitHandler = () => {
     const apiUrl = BASE_URL + "nagorik/v1/user/sign-out";
@@ -79,8 +86,8 @@ const TopbarComponent = ({ handleToggleSidebar, token, name }) => {
             <NavDropdown.Item onClick={profileRoute}>
               <CgProfile className="mb-1" /> প্রোফাইল
             </NavDropdown.Item>
-          <NavDropdown.Item>
-            <FaKey className="mb-1" /> পাসওয়ার্ড পরিবর্তন
+          <NavDropdown.Item onClick={changePasswordRoute}>
+            <FaKey className="mb-1"/> পাসওয়ার্ড পরিবর্তন
           </NavDropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Item onClick={submitHandler}>

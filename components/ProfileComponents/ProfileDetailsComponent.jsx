@@ -12,6 +12,8 @@ import { Row, Col } from "react-bootstrap";
 
 //loader
 import { LineWave } from "react-loader-spinner";
+
+//icons
 import { MdEmail } from "react-icons/md";
 import { FaMobile } from "react-icons/fa";
 
