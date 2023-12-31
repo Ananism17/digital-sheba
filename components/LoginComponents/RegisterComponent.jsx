@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Router from "next/router";
 
+//axios
+import axios from "axios";
+import { BASE_URL } from "@/base";
+
 //react-bootstrap
 import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 
 //icons
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import { BASE_URL } from "@/base";
 
 //react-toast
 import { toast } from "react-toastify";

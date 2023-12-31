@@ -4,7 +4,6 @@
 /* ===================================================================== */
 /* ===================================================================== */
 
-
 /* TABS */
 
 .custom-tabs .nav-link {
@@ -12,15 +11,14 @@
 }
 
 .custom-tabs .nav-link:hover {
-    background-color: rgb(9, 179, 179);
-    color: white;
-  }
+  background-color: rgb(9, 179, 179);
+  color: white;
+}
 
 .custom-tabs .nav-link.active {
   background-color: darkcyan;
   color: white;
 }
-
 
 /* TILES */
 
@@ -42,7 +40,6 @@
   transform: scale(1.1);
 }
 
-
 /* INPUT FIELD */
 
 .custom-input {
@@ -57,7 +54,6 @@
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-color: cyan;
 }
-
 
 /* BUTTONS */
 
@@ -89,7 +85,6 @@
   border: 2px solid darkcyan;
 }
 
-
 /* TABLE */
 
 .custom-table th {
@@ -97,7 +92,7 @@
   color: white;
 }
 
-/* DATEPICKER */
+/* DATE-PICKER */
 
 .custom-datepicker-wrapper {
   width: 100%;
@@ -131,17 +126,28 @@
 }
 
 .react-datepicker__day--selected {
-  background-color: darkcyan !important; 
-  color: #fff !important; 
+  background-color: darkcyan !important;
+  color: #fff !important;
 }
 
+/* LINKS */
 
 .custom-anchor {
   color: darkcyan;
   text-decoration: none;
 }
 
-
+/* DROPDOWN */
+div.dropdown-menu.show {
+  background-color: darkcyan;
+  border: 2px solid #cce6df;
+}
+a.dropdown-item {
+  color: #fff; 
+}
+a.dropdown-item:hover {
+  color: darkcyan; 
+}
 
 /* ===================================================================== */
 /* ===================================================================== */
@@ -150,19 +156,18 @@
 /* ===================================================================== */
 
 .login-container {
-  background: url('/images/background.png') center/cover;
+  background: url("/images/background.png") center/cover;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-
 .login-card {
-  background: rgba(255, 255, 255, 0.2); 
-  backdrop-filter: blur(10px); 
-  border-radius: 10px; 
-  padding: 20px; 
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 20px;
   flex-direction: column;
 }
 

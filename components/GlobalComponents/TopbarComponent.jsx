@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Router from "next/router";
 
 //react-bootstrap
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
@@ -15,6 +16,11 @@ import { useDispatch } from "react-redux";
 import { logout } from "../../store/actions/auth";
 import { connect } from "react-redux";
 
+//react-icons
+import { CgProfile } from "react-icons/cg";
+import { FaKey } from "react-icons/fa";
+import { RiLogoutCircleLine } from "react-icons/ri";
+
 const TopbarComponent = ({ handleToggleSidebar, token, name }) => {
   //redux
   const dispatch = useDispatch();
@@ -22,7 +28,11 @@ const TopbarComponent = ({ handleToggleSidebar, token, name }) => {
   const submitHandler = () => {
     const apiUrl = BASE_URL + "nagorik/v1/user/sign-out";
     const config = {
-      headers: { Authorization: `Bearer ${token}` },
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+        // "Content-Type": "multipart/form-data",
+      },
     };
     axios
       .post(apiUrl, "", config)
@@ -54,10 +64,17 @@ const TopbarComponent = ({ handleToggleSidebar, token, name }) => {
         />
       </Nav>
       <Nav>
-        <NavDropdown title={name} style={{ marginRight: "70px" }}>
-          <NavDropdown.Item href="#">প্রোফাইল</NavDropdown.Item>
-          {/* <NavDropdown.Divider /> */}
-          <NavDropdown.Item onClick={submitHandler}>লগ আউট</NavDropdown.Item>
+        <NavDropdown title={name} style={{ marginRight: "80px", color: "darkcyan" }}>
+          <NavDropdown.Item href="#">
+            <CgProfile className="mb-1" /> প্রোফাইল
+          </NavDropdown.Item>
+          <NavDropdown.Item href="#">
+            <FaKey className="mb-1" /> পাসওয়ার্ড পরিবর্তন
+          </NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item onClick={submitHandler}>
+            <RiLogoutCircleLine className="mb-1" /> লগ আউট
+          </NavDropdown.Item>
         </NavDropdown>
       </Nav>
     </Navbar>
